@@ -22,7 +22,7 @@ class ModuleTest1(unittest.TestCase):
  
 if __name__ == '__main__':
     testSuite = unittest.TestSuite()
-    for testmethod in ('testsum1', 'testsum2', 'whatIfNotGood'):
+    for testmethod in ('testsum1', 'testsum2'): #, 'whatIfNotGood'):
         testSuite.addTest(ModuleTest1(testmethod))
     
     runner = unittest.TextTestRunner()
