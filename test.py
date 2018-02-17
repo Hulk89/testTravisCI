@@ -1,5 +1,6 @@
 import unittest
- 
+import sys
+
 def sum(a,b):
     return a+b
  
@@ -23,5 +24,7 @@ if __name__ == '__main__':
     testSuite = unittest.TestSuite()
     for testmethod in ('testsum1', 'testsum2', 'whatIfNotGood'):
         testSuite.addTest(ModuleTest1(testmethod))
+    
     runner = unittest.TextTestRunner()
-    runner.run(testSuite)
+    result = runner.run(testSuite)
+    sys.exit(not result.wasSuccessful())
